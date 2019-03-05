@@ -10,40 +10,43 @@ class Interval {
 
     /**
      * Exemple 1 :
-     *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-     *      interval2 =                                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+     *      interval1 = [1,5]                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+     *      interval2 = [4,9]                                 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
      *      interval1.overlaps(interval2) => true
      *
      * Exemple 2 :
-     *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-     *      interval2 =                                                       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+     *      interval1 = [1,5]                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+     *      interval2 =  [6,9]                                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
      *      interval1.overlaps(interval2) => false
      *
      * @param {Interval} interval
      * @returns {boolean}
      */
     overlaps(interval) {
+
         return this.end > interval.start && this.start < interval.end;
     }
+
+    
 
     /**
      * Retourne true si cet interval contient le paramètre interval
      *
      * Exemple 1 :
-     *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-     *      interval2 =                                  ▓▓▓▓▓▓▓▓▓▓▓▓▓
+     *      interval1 =  [1,5]                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+     *      interval2 =  [2,3]                                ▓▓▓▓▓▓▓▓▓▓▓▓▓
      *      interval1.includes(interval2) => true
      *
      * Exemple 2 :
-     *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-     *      interval2 =                              ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+     *      interval1 = [1,5]                         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+     *      interval2 = [4,9]                            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
      *      interval1.includes(interval2) => false
      *
      * @param {Interval} interval
      * @returns {boolean}
      */
     includes(interval) {
-
+        return this.end >= interval.end && this.start <= interval.start;
     };
 
     /**
