@@ -102,7 +102,29 @@ class Interval {
      * @returns {Interval|null}
      */
     intersection(interval) {
+        if(this.start >= interval.end){
+            return [];
+        }
 
+        if(interval.start >= this.end){
+            return [];
+        }
+        if (this.start >= interval.start){
+            if (this.end >= interval.end){
+                return [this.start,interval.end];
+            }
+            else { 
+                return [this.start,this.end];
+            }
+        }
+        else {
+            if(this.end >= interval.end){
+                return [interval.start,interval.end];
+            }
+            else {
+                return [interval.start,this.end];
+            }
+        }
     };
 
     /**
