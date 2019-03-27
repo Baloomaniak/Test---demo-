@@ -132,7 +132,50 @@ it("union test case 6", function(){
     expect(interval1.union(interval2)).toEqual([1,90]);
 })
 
+});
 
+describe('Intersection interval', function () {
 
+it("Intersection test case 1", function(){
+    let interval1 = new Interval(1,10)
+    let interval2 = new Interval(2,9)
+    expect(interval1.intersection(interval2)).toEqual([2,9]);
+})
+
+it("Intersection test case 2", function(){
+    let interval1 = new Interval(2,9)
+    let interval2 = new Interval(1,10)
+    expect(interval1.intersection(interval2)).toEqual([2,9]);
+})
+
+it("Intersection test case 3", function(){
+    let interval1 = new Interval(2,10)
+    let interval2 = new Interval(2,9)
+    expect(interval1.intersection(interval2)).toEqual([2,9]);
+})
+
+it("Intersection test case 4", function(){
+    let interval1 = new Interval(1,9)
+    let interval2 = new Interval(2,9)
+    expect(interval1.intersection(interval2)).toEqual([2,9]);
+})
+
+it("Intersection test case 5", function(){
+    let interval1 = new Interval(2,9)
+    let interval2 = new Interval(2,9)
+    expect(interval1.intersection(interval2)).toEqual([2,9]);
+})
+
+it("Intersection test case 6", function(){
+    let interval1 = new Interval(10,20)
+    let interval2 = new Interval(1,9)
+    expect(interval1.intersection(interval2)).toEqual([]);
+})
+
+it("Intersection test case 7", function(){
+    let interval1 = new Interval(1,9)
+    let interval2 = new Interval(10,20)
+    expect(interval1.intersection(interval2)).toEqual([]);
+})
 
 });
